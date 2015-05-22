@@ -1,0 +1,67 @@
+﻿@model DynamicProperties.Models.PetVM
+
+@{
+    ViewBag.Title = "EditPet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Pet</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+    @Html.Hidden("RootUrl", Url.Action("", null, null, Request.Url.Scheme))
+    @Html.HiddenFor(model => model.PetID)
+    @Html.HiddenFor(model => model.Name)
+
+    <div class="form-horizontal">
+        <h4>Edit Pet</h4>
+        <hr />
+        
+        <div data-bind="template: { name: 'propertyErrorSummary-template', data: $data}"></div>
+
+        <!-- fixed properties -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-sm-4 required" })
+            <div class="col-sm-6">
+                <input data-bind="value: Pet().PetName" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <!-- this field determines which dynamic properties are displayed, called "PetTypeChanged" on the "change" event for the drop down -->
+        <div class="form-group">
+            <label class="control-label col-sm-4 required">Pet Type</label>
+            <div class="col-sm-6">
+                @Html.DropDownListFor(model => model.PetTypeID, ViewBag.PetTypes as IEnumerable<SelectListItem>, new { @class = "form-control", data_bind = "event: {change: PetTypeChanged}" })
+                @*@Html.EnumDropDownListFor(model => model.PetType, new { @class = "form-control", data_bind = "event: {change: PetTypeChanged}" })*@
+            </div>
+        </div>
+        <!-- fixed properties end -->
+        <!-- repeating dynamic properties -->
+        <div data-bind="template: { name: 'propertyEditor-template', data: $data}">
+
+        </div>
+        <!-- repeating dynamic properties end -->
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="button" value="Save" class="btn btn-default" data-bind="click: Save" title="Save">Save</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section scripts{
+
+    <!-- template for editing dynamic properties -->
+    @{Html.RenderPartial("~/Views/Shared/EditorTemplates/_KnockoutPropertyEditorTemplate.cshtml");}
+
+    <script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/PropertyEditing/PetPropertyEditorKnockout.js")"></script>
+
+}

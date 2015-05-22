@@ -1,0 +1,74 @@
+﻿@model DynamicProperties.Models.PetTypeVM
+
+@{
+    ViewBag.Title = "EditPetType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Pet Type</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("RootUrl", Url.Action("", null, null, Request.Url.Scheme))
+    @Html.HiddenFor(model => model.PetTypeID)
+    @Html.HiddenFor(model => model.Name)
+
+    <div class="form-horizontal">
+        <div data-bind="template: { name: 'propertyErrorSummary-template', data: $data}"></div>
+        <h4>Pet Type</h4>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" data-bind="value: Name" class="form-control" />
+            </div>
+        </div>
+
+        <h4>Pet Type Properties</h4>
+        @Html.Hidden("PropertyCount", Model.Properties.Count.ToString())
+
+        @{
+            for (int i = 0; i < Model.Properties.Count; i++)
+            {
+                //overriding the default id so that it's predictable (need to use them later in jquery)
+                @Html.HiddenFor(m => Model.Properties[i].PropertyID, new { id = "Properties_" + i.ToString() + "_.PropertyID" })
+                @Html.HiddenFor(m => Model.Properties[i].PropertyName, new { id = "Properties_" + i.ToString() + "_.PropertyName" })
+                @Html.Hidden("Properties_" + i.ToString() + "_.PropertyType", Convert.ToInt16(Model.Properties[i].PropertyType), new { id = "Properties_" + i.ToString() + "_.PropertyType" })
+                @Html.HiddenFor(m => Model.Properties[i].Required, new { id = "Properties_" + i.ToString() + "_.Required" })
+            }
+        }
+
+        <hr />
+        <div data-bind="template: { name: 'petType-PropertyList-template', data: $data}"></div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Save" class="btn btn-default" data-bind="click: Save" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<!-- http://aboutcode.net/2012/11/15/twitter-bootstrap-modals-and-knockoutjs.html -->
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+@section scripts{
+
+    <!-- template for editing dynamic properties -->
+    @{Html.RenderPartial("~/Views/Shared/EditorTemplates/_KnockoutPropertyEditorTemplate.cshtml");}
+
+    <script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/PropertyEditing/PetTypeEditor.js")"></script>
+
+}

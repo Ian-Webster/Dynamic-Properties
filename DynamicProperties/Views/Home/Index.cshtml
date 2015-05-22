@@ -1,0 +1,74 @@
+﻿@model DynamicProperties.Models.HomeVM
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#PetTypes" data-toggle="tab">Pet Types</a></li>
+    <li ><a href="#Pets" data-toggle="tab">Pets</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active in" id="PetTypes">
+        <p>
+            @Html.ActionLink("Create New", "AddPetType")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Pet Type Name
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.PetTypes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditPetType", new { PetTypeID = item.PetTypeID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="tab-pane fade" id="Pets">
+        <p>
+            @Html.ActionLink("Create New", "AddPet")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Pet Name
+                </th>
+                <th>
+                    Pet Type
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Pets)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PetTypeID)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditPet", new { PetID = item.PetID.ToString() })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
