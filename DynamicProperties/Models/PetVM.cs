@@ -13,6 +13,7 @@ namespace DynamicProperties.Models
         public string Name { get; set; }
         [Required(ErrorMessage = "You must select pet type")]
         public Guid PetTypeID { get; set; }
+        public string PetTypeName { get; set; }
         public List<PetPropertyVM> Properties { get; set; }
 
     }

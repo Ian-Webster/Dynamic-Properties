@@ -120,14 +120,22 @@ namespace DynamicProperties.Controllers
             if (PetTypes == null)
             {
                 PetTypes = new List<PetTypeVM>();
-                var dog = new PetTypeVM()
+                var petType = new PetTypeVM()
                 {
                     Name = "Dog",
                     PetTypeID = Guid.NewGuid(),
                     Properties = new List<PropertyVM>()
                 };
-                dog.Properties.Add(new PropertyVM() { PropertyID = 1, PropertyName = "Breed", PropertyType = PropertyType.Textbox, Required = true });
-                PetTypes.Add(dog);
+                petType.Properties.Add(new PropertyVM() { PropertyID = 1, PropertyName = "How often do you walk the dog a day", PropertyType = PropertyType.Numeric, Required = true });
+                PetTypes.Add(petType);
+                petType = new PetTypeVM()
+                {
+                    Name = "Cat",
+                    PetTypeID = Guid.NewGuid(),
+                    Properties = new List<PropertyVM>()
+                };
+                petType.Properties.Add(new PropertyVM() { PropertyID = 1, PropertyName = "Do you let your cat out", PropertyType = PropertyType.Boolean, Required = false });
+                PetTypes.Add(petType);
             }
             return View(new HomeVM() { Pets = Pets, PetTypes = PetTypes });
         }
@@ -260,7 +268,8 @@ namespace DynamicProperties.Controllers
                 {
                     Name = petToSave.PetName,
                     PetTypeID = petToSave.PetTypeID,
-                    Properties = ListPropertiesForNewPet(petToSave.PetTypeID)
+                    Properties = ListPropertiesForNewPet(petToSave.PetTypeID),
+                    PetTypeName = PetTypes.Where(pt => pt.PetTypeID == petToSave.PetTypeID).First().Name
                 };
             }
             else

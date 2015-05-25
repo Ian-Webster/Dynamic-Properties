@@ -23,3 +23,28 @@ C:\Projects\Test Projects\Dynamic properties\DynamicProperties\DynamicProperties
 C:\Projects\Test Projects\Dynamic properties\DynamicProperties\DynamicProperties\obj\Debug\DynamicProperties.dll
 C:\Projects\Test Projects\Dynamic properties\DynamicProperties\DynamicProperties\obj\Debug\DynamicProperties.pdb
 C:\Projects\Test Projects\Dynamic properties\DynamicProperties\DynamicProperties\obj\Debug\DynamicProperties.csprojResolveAssemblyReference.cache
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\DynamicProperties.dll.config
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\DynamicProperties.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\DynamicProperties.pdb
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\Antlr3.Runtime.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\Microsoft.Web.Infrastructure.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Helpers.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Mvc.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Optimization.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Razor.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.Deployment.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.Razor.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\WebGrease.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\Newtonsoft.Json.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Helpers.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Mvc.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Razor.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.Deployment.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.WebPages.Razor.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\System.Web.Optimization.xml
+C:\Git Projects\Dynamic-Properties\DynamicProperties\bin\Antlr3.Runtime.pdb
+C:\Git Projects\Dynamic-Properties\DynamicProperties\obj\Debug\DynamicProperties.csprojResolveAssemblyReference.cache
+C:\Git Projects\Dynamic-Properties\DynamicProperties\obj\Debug\DynamicProperties.dll
+C:\Git Projects\Dynamic-Properties\DynamicProperties\obj\Debug\DynamicProperties.pdb
