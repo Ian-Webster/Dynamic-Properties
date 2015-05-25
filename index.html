@@ -1,45 +1,73 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Dynamic-properties by Ian-Webster</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Dynamic-properties</h1>
-        <p>Test project trying out Knockout with MVC</p>
+    <section class="page-header">
+      <h1 class="project-name">Dynamic-properties</h1>
+      <h2 class="project-tagline">Test project using Knockout with MVC</h2>
+      <a href="https://github.com/Ian-Webster/Dynamic-Properties" class="btn">View on GitHub</a>
+      <a href="https://github.com/Ian-Webster/Dynamic-Properties/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Ian-Webster/Dynamic-Properties/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/Ian-Webster/Dynamic-Properties">View the Project on GitHub <small>Ian-Webster/Dynamic-Properties</small></a></p>
+    <section class="main-content">
+      <h1>
+<a id="dynamic-properties" class="anchor" href="#dynamic-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dynamic Properties</h1>
 
+<p>A project I created to enable me prototype an MVC form with fields that vary depending on an answer given on the same form.</p>
 
-        <ul>
-          <li><a href="https://github.com/Ian-Webster/Dynamic-Properties/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Ian-Webster/Dynamic-Properties/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Ian-Webster/Dynamic-Properties">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p>A test project I created to try dynamic fields in an MVC project.</p>
+<p>The project allows the user to define pet types (e.g. cat, dog, rabbit etc) which have a set of standard properties (e.g. name) and a number of dynamic properties that are specific to the pet type (for instance you might want to know how many times a day you walk a dog or how many liter trays you have for a cat).</p>
 
-<p>Project runs in VS2013.</p>
+<p>Once some pet types have been defined (by default pet types dog &amp; cat are included) the user can then add individual pets, changing the "Pet Type" drop down list will update the dynamic properties to reflect the pet type that has been selected.</p>
 
-<p>Open with /Home/ for default view.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/Ian-Webster">Ian-Webster</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>I've used Knockout to facilitate the binding of the forms and to handle the refresh of properties in the pet entry screen, Knockout is all so used in the pet type entry screen to keep track of and add/edit properties, please note that the modal functionality used on the pet type edit screen is taken from <a href="http://aboutcode.net/2012/11/15/twitter-bootstrap-modals-and-knockoutjs.html">http://aboutcode.net/2012/11/15/twitter-bootstrap-modals-and-knockoutjs.html</a> and is not by own work.</p>
+
+<p>The project runs in VS2013.</p>
+
+<p>Usage (pet type editor);</p>
+
+<ol>
+<li>Make sure /Home/index is your start path</li>
+<li>Click "Pet Types" tab on the home screen (will be selected by default if you've just run the project)</li>
+<li>You can either edit one of the existing pet types (by clicking the appropriate "Edit" link in the list) or create a new one by clicking "Create New" link</li>
+<li>Enter a name for the pet type</li>
+<li>Click "Add property" to add a new property</li>
+<li>On the modal property window enter a property name (this will be what is displayed on the pet entry form)</li>
+<li>Select a property type from the drop down (this will affect validation on the pet entry form)</li>
+<li>Check whether the field is required or not (this will affect validation on the pet entry form, note boolean is unaffected by required)</li>
+<li>You can continue to add properties or if you have finished click "Save"</li>
+<li>It should be noted that by fixed property of "Name" is included in all pet types</li>
+</ol>
+
+<p>Usage (pet editor);</p>
+
+<ol>
+<li>Make sure /Home/index is your start path</li>
+<li>Click "Pets" tab on the home screen</li>
+<li>You can either edit one of the existing pets (by default there won't be any on first run) by clicking the appropriate "Edit" link or create a new one by clicking "Create New" link</li>
+<li>Enter the name of the pet</li>
+<li>Choose a pet type</li>
+<li>Fill in the fields that appear</li>
+<li>Click "Save"</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Ian-Webster/Dynamic-Properties">Dynamic-properties</a> is maintained by <a href="https://github.com/Ian-Webster">Ian-Webster</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
+
